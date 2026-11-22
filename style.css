@@ -76,6 +76,7 @@ header.top nav a:hover,header.top nav a[aria-current="page"]{color:var(--fg)}
 .hero p{font-size:16px;color:var(--muted);max-width:34em}
 .hero p a{color:var(--fg);text-decoration-color:var(--line);text-underline-offset:3px;transition:text-decoration-color .2s}
 .hero p a:hover{text-decoration-color:var(--fg)}
+.inline-logo{display:inline-block;height:1.05em;width:auto;vertical-align:-0.15em;margin:0 1px}
 .hero h1+p{margin-top:10px}
 .hero .tag-more+p{margin-top:20px}
 .hero p+p{margin-top:14px}
