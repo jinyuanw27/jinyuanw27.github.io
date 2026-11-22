@@ -33,6 +33,13 @@ header.top nav{display:flex;align-items:center;gap:24px}
   animation:drop .18s ease}
 .contact .menu a{display:block;padding:8px 12px;border-radius:8px;color:var(--fg)!important;white-space:nowrap}
 .contact .menu a:hover{background:var(--soft)}
+/* Email 子菜单：点 Email 展开两个邮箱 */
+.contact .sub summary{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-radius:8px;color:var(--fg)}
+.contact .sub summary:hover{background:var(--soft)}
+.contact .sub summary::after{transform:rotate(-45deg)}
+.contact .sub[open] summary::after{transform:translateY(-2px) rotate(45deg)}
+.contact .sub a{padding-left:24px;font-size:13px;color:var(--muted)!important}
+.contact .sub a:hover{color:var(--fg)!important}
 @keyframes drop{from{opacity:0;transform:translateY(-4px)}}
 @media (max-width:480px){ header.top nav{gap:14px} }
 header.top nav a{text-decoration:none;color:var(--muted);transition:color .2s}
