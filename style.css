@@ -41,10 +41,18 @@ header.top nav{display:flex;align-items:center;gap:24px}
 .contact .sub a{padding-left:24px;font-size:13px;color:var(--muted)!important}
 .contact .sub a:hover{color:var(--fg)!important}
 @keyframes drop{from{opacity:0;transform:translateY(-4px)}}
-@media (max-width:480px){ header.top nav{gap:14px} }
+@media (max-width:480px){
+  header.top{gap:12px}
+  header.top nav{gap:14px}
+  .brand{line-height:1.25}
+  .brand .cn{display:block;margin-left:0;font-size:12px}   /* 手机上中文名放到英文名下面 */
+}
 header.top nav a{text-decoration:none;color:var(--muted);transition:color .2s}
 header.top nav a:hover,header.top nav a[aria-current="page"]{color:var(--fg)}
 .brand{font-weight:600;text-decoration:none}
+.brand .cn{font-weight:400;color:var(--muted);margin-left:8px}
+/* 中文名用楷体：Mac 上是华文楷体 STKaiti，Windows 上是楷体 KaiTi */
+.brand .cn,.kai{font-family:"STKaiti","Kaiti SC","KaiTi","楷体","BiauKai",serif}
 
 /* 首页：左照片、右介绍 */
 .hero{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start;padding:10vh 0 12vh}
