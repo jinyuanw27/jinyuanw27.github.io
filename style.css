@@ -31,7 +31,7 @@ header.top nav{display:flex;align-items:center;gap:24px}
 .contact .menu{position:absolute;right:0;top:calc(100% + 12px);z-index:50;min-width:170px;padding:6px;
   background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px -12px #0003;
   animation:drop .18s ease}
-.contact .menu a{display:block;padding:8px 12px;border-radius:8px;color:var(--fg)!important}
+.contact .menu a{display:block;padding:8px 12px;border-radius:8px;color:var(--fg)!important;white-space:nowrap}
 .contact .menu a:hover{background:var(--soft)}
 @keyframes drop{from{opacity:0;transform:translateY(-4px)}}
 @media (max-width:480px){ header.top nav{gap:14px} }
