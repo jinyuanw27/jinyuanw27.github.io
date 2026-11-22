@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misc · Your Name</title>
+<meta name="description" content="Miscellaneous things, mostly cats">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body class="ready">
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="index.html">Your Name</a>
+    <nav><a href="failures.html">Failures</a><a href="misc.html" aria-current="page">Misc</a><details class="contact"><summary>Contact</summary><div class="menu"><a href="mailto:you@example.com">Email</a><a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a><a href="https://openreview.net/profile?id=~Your_Name1" target="_blank" rel="noopener">OpenReview</a></div></details></nav>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <h1>Misc</h1>
+      <p>Odds and ends. Mostly cats.</p>
+    </div>
+
+    <!-- 小猫照片：把照片放进 misc 文件夹，文件名和下面的 src 对上即可。
+         想加更多就复制一整个 <figure>…</figure>；不想要文字说明就删掉 figcaption。
+         照片还没放进去时会显示一个小猫占位。 -->
+    <div class="gallery">
+      <figure><div class="pic"><img src="misc/cat-1.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic"><img src="misc/cat-2.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic"><img src="misc/cat-3.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic"><img src="misc/cat-4.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic"><img src="misc/cat-5.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic"><img src="misc/cat-6.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+    </div>
+  </main>
+
+  <footer><span>© 2026 Your Name</span><a href="index.html">← Home</a></footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

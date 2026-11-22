@@ -5,9 +5,13 @@ and a startup sound that plays when the visitor clicks to enter.
 
 ## Files
 
-- `index.html` — the whole site (boot screen, homepage, settings in `CONFIG` at the bottom)
+- `index.html` — homepage with the boot screen (settings in `CONFIG` at the bottom)
+- `failures.html` — Failure Résumé page
+- `misc.html` — Misc page (cat photo gallery)
+- `style.css` — shared styles for all pages
 - `dokia.css` — the flip phone shown on the boot screen
 - `photo.jpg` — your photo (add it next to `index.html`; initials show until it exists)
+- `misc/` — cat photos for the Misc page (`cat-1.jpg`, `cat-2.jpg`, …)
 
 ## Preview locally
 
