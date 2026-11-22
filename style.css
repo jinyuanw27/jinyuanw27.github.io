@@ -83,6 +83,18 @@ section h2{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:up
 .links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
 .links a:hover{border-color:var(--fg)}
 
+/* 首页 Research */
+.paper h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;letter-spacing:-.01em}
+.paper h3 a{text-decoration:none}
+.paper h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.paper .authors{margin-top:12px;font-size:15px;color:var(--muted)}
+.paper .authors b{font-weight:500;color:var(--fg)}
+.paper .venue{font-size:14px;color:var(--muted)}
+.paper .venue a{text-underline-offset:3px}
+.paper .summary{margin-top:16px;max-width:42em}
+.paper .figure{display:block;margin:28px 0 20px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.paper .figure img{display:block;width:100%;height:auto}
+
 /* 子页面标题 */
 .page-head{padding:10vh 0 40px}
 .page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,8vw,72px);line-height:1.05;letter-spacing:-.02em}

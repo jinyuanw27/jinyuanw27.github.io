@@ -97,6 +97,24 @@ body.ready .reveal:nth-child(2){transition-delay:.1s}
         <p>Outside of work, I play badminton, swim, spend time with my cat, take solo trips, and love meeting new people.</p>
       </div>
     </div>
+
+    <!-- 研究：以后有新项目，复制一整个 <article class="paper">…</article> 放在最上面 -->
+    <section id="research" class="reveal">
+      <h2>Research</h2>
+      <article class="paper">
+        <h3><a href="https://arxiv.org/abs/2611.10488" target="_blank" rel="noopener">Safer for Whom? A Systematic Exploration of AI Safety in Eating Disorder Interactions</a></h3>
+        <p class="authors"><b>Jinyuan Wang</b>, Minh Duc Chu, Frances Ross, Ellen Fitzsimmons-Craft, Kristina Lerman</p>
+        <p class="venue">arXiv preprint, 2026 · Advised by <a href="https://luddy.iu.edu/people/lerman-kristina.html" target="_blank" rel="noopener">Kristina Lerman</a></p>
+        <p class="summary">We test how three open-weight LLMs answer real questions from an online pro-anorexia community, grading each response against a seven-dimension taxonomy of eating-disorder harms. Models often miss vulnerability expressed only through language, and their safety varies with a user's race, gender, and BMI, with body size producing the largest gaps.</p>
+        <a class="figure" href="research/pipeline.png" target="_blank" rel="noopener">
+          <img src="research/pipeline.png" alt="Evaluation pipeline: forum questions, with or without a user bio, are sent to three target models, and a judge model scores each response on seven eating-disorder harm dimensions." loading="lazy">
+        </a>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2611.10488" target="_blank" rel="noopener">Paper</a>
+          <a href="https://arxiv.org/html/2611.10488v1" target="_blank" rel="noopener">HTML</a>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer><span>© 2026 Jinyuan Wang</span><button id="replay" type="button">Replay intro</button></footer>
