@@ -102,7 +102,7 @@ body.ready .reveal:nth-child(2){transition-delay:.1s}
 <script>
 /* ============ 配置 ============ */
 const CONFIG = {
-  bootMs: 3000,                       // 进度条走多久后出现“click anywhere to start”
+  bootMs: 6000,                       // 开机画面至少播放多久（毫秒）：这段时间内点击无效，之后出现“click anywhere to start”
   useOriginalGif: false,              // true = 使用原版的 XP 开机 GIF，false = 用上面的 CSS 版本
   youtubeId: "7nQ2oiVqKHw",           // 原版使用的 XP 开机音效视频
   audioFile: "",                      // 如果有本地音频（如 "startup.mp3"），填这里，优先使用
@@ -146,7 +146,9 @@ function startIntro(){
   startIntro.t = setTimeout(()=>boot.classList.add("loaded"), CONFIG.bootMs);
 }
 
-boot.addEventListener("click", ()=>enter(true));
+// 开机画面播完（出现提示）之后，点击才会进入
+const bootDone = () => boot.classList.contains("loaded");
+boot.addEventListener("click", ()=>{ if (bootDone()) enter(true); });
 
 // 翻盖手机：点击开合，不改网址、不触发进入网站
 const dokia = document.getElementById("dokia");
@@ -164,7 +166,7 @@ document.addEventListener("keydown", e=>{
   if (boot.classList.contains("hide")) return;
   if (dokia.contains(document.activeElement)) return;
   if (e.key === "Escape") enter(false);                  // Esc：跳过，不放声音
-  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); enter(true); }
+  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (bootDone()) enter(true); }
 });
 document.getElementById("replay").addEventListener("click", ()=>{ window.scrollTo(0,0); startIntro(); });
 
