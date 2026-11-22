@@ -96,6 +96,7 @@ section h2{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:up
 .gallery figcaption:empty{display:none}
 .mgroup{padding:32px 0 16px;border-top:1px solid var(--line)}
 .mgroup h2{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:20px}
+.mgroup .sub{color:var(--muted);margin:-14px 0 20px}
 @media (max-width:640px){ .gallery{grid-template-columns:repeat(2,1fr);gap:12px} }
 
 /* 页脚 */
