@@ -41,9 +41,17 @@ header.top nav{display:flex;align-items:center;gap:24px}
 .contact .sub a{padding-left:24px;font-size:13px;color:var(--muted)!important}
 .contact .sub a:hover{color:var(--fg)!important}
 @keyframes drop{from{opacity:0;transform:translateY(-4px)}}
+/* 右上角联系方式图标 */
+header.top .sep{width:1px;height:16px;background:var(--line)}
+header.top nav .icon,.contact.email summary{display:grid;place-items:center;color:var(--muted);transition:color .2s}
+header.top nav .icon svg,.contact.email summary svg{width:18px;height:18px;fill:currentColor;display:block}
+header.top nav .icon:hover,.contact.email summary:hover,.contact.email[open] summary{color:var(--fg)}
+.contact.email summary::after{display:none}
+.contact.email .menu{min-width:0}
 @media (max-width:480px){
   header.top{gap:12px}
-  header.top nav{gap:14px}
+  header.top nav{gap:11px}
+  header.top nav .icon svg,.contact.email summary svg{width:16px;height:16px}
   .brand{line-height:1.25}
   header.top .brand .cn{display:block;margin-left:0;font-size:12px}   /* 手机上中文名放到英文名下面 */
 }
@@ -91,9 +99,13 @@ section h2{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:up
 .paper .authors b{font-weight:500;color:var(--fg)}
 .paper .venue{font-size:14px;color:var(--muted)}
 .paper .venue a{text-underline-offset:3px}
-.paper .summary{margin-top:16px;max-width:42em}
-.paper .figure{display:block;margin:28px 0 20px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff}
-.paper .figure img{display:block;width:100%;height:auto}
+.paper .summary{margin-top:14px;max-width:42em}
+.paper{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:start}
+.paper .thumb{display:grid;place-items:center;aspect-ratio:1;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:border-color .2s}
+.paper .thumb:hover{border-color:var(--muted)}
+.paper .thumb img{display:block;width:100%;height:auto}
+.paper .links{margin-top:18px}
+@media (max-width:640px){ .paper{grid-template-columns:1fr;gap:20px} .paper .thumb{width:160px} }
 
 /* 子页面标题 */
 .page-head{padding:10vh 0 40px}
