@@ -39,8 +39,11 @@
   -webkit-mask:repeating-linear-gradient(90deg,transparent 0 2px,#000 2px 10px);mask:repeating-linear-gradient(90deg,transparent 0 2px,#000 2px 10px)}
 @keyframes slide{to{left:150px}}
 /* 加载完成后出现的“点击开始”提示 */
-.start{position:absolute;bottom:22%;font-size:14px;letter-spacing:.08em;opacity:0;transition:opacity .6s ease}
-#boot.loaded .start{opacity:.85;animation:blink 1.6s ease-in-out infinite}
+.start{position:absolute;bottom:22%;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;transition:opacity .6s ease}
+.start b{font-weight:400;font-size:15px;letter-spacing:.08em}
+.start small{font-size:12px;opacity:.6}
+#boot.loaded .start{opacity:1}
+#boot.loaded .start b{animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{50%{opacity:.35}}
 .foot{position:absolute;bottom:28px;left:32px;right:32px;display:flex;justify-content:space-between;font-size:12px;opacity:.75}
 .hide{opacity:0;pointer-events:none}
@@ -68,7 +71,7 @@ body.ready .reveal:nth-child(2){transition-delay:.1s}
     <div class="wordmark"><small>welcome to</small>Jinyuan Wang<sup>xp</sup></div>
   </div>
   <div class="bar"><span></span></div>
-  <div class="start">click anywhere to start 🔊</div>
+  <div class="start"><b>Click to continue</b><small>🔊 A startup sound will play</small></div>
   <div class="foot"><span>© 2026 Jinyuan Wang</span><span>personal edition</span></div>
 
   <!-- 翻盖手机 DOKIA — (c) Layout created by daniel (https://layouts.spacehey.com/layout?id=82799) -->
@@ -93,7 +96,7 @@ body.ready .reveal:nth-child(2){transition-delay:.1s}
         <h1>Hi, I'm Jinyuan Wang.<br><em>I study how AI and social media shape mental health.</em></h1>
         <!-- 介绍：一个 <p> 是一段，想多写就多加几段 -->
         <p>My research looks at how AI and social media affect people's well-being, and who bears the cost when these systems fail. Using machine learning, social media data, and LLM auditing, I find safety risks and biases in human–AI interaction.</p>
-        <p>I'm a master's student in Computational Linguistics at Indiana University Bloomington. I hold a bachelor's degree in English Language and Literature.</p>
+        <p>I'm a master's student in Computational Linguistics at Indiana University Bloomington, where I'm fortunate to be advised by <a href="https://cl.indiana.edu/~skuebler/" target="_blank" rel="noopener">Prof. Sandra Kübler</a> and <a href="https://scholar.google.com/citations?user=eTqZ8dIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Prof. Kristina Lerman</a>. Before IU, I earned a bachelor's degree in English Language and Literature.</p>
         <p>Outside of work, I play badminton, swim, spend time with my cat, take solo trips, and love meeting new people.</p>
       </div>
     </div>
@@ -108,7 +111,7 @@ body.ready .reveal:nth-child(2){transition-delay:.1s}
         <div class="paper-body">
           <h3><a href="https://arxiv.org/abs/2611.10488" target="_blank" rel="noopener">Safer for Whom? A Systematic Exploration of AI Safety in Eating Disorder Interactions</a></h3>
           <p class="authors"><b>Jinyuan Wang</b>, Minh Duc Chu, Frances Ross, Ellen Fitzsimmons-Craft, Kristina Lerman</p>
-          <p class="venue">arXiv preprint, 2026 · Advised by <a href="https://luddy.iu.edu/people/lerman-kristina.html" target="_blank" rel="noopener">Kristina Lerman</a></p>
+          <p class="venue">arXiv preprint, 2026 · Advised by <a href="https://scholar.google.com/citations?user=eTqZ8dIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Kristina Lerman</a></p>
           <p class="summary">We test how three open-weight LLMs answer real questions from an online pro-anorexia community, grading each response against a seven-dimension taxonomy of eating-disorder harms. Models often miss vulnerability expressed only through language, and their safety varies with a user's race, gender, and BMI, with body size producing the largest gaps.</p>
           <div class="links">
             <a href="https://arxiv.org/abs/2611.10488" target="_blank" rel="noopener">Paper</a>
@@ -125,7 +128,7 @@ body.ready .reveal:nth-child(2){transition-delay:.1s}
 <script>
 /* ============ 配置 ============ */
 const CONFIG = {
-  bootMs: 1000,                     // 开机画面至少播放多久（毫秒）：这段时间内点击无效，之后出现“click anywhere to start”
+  bootMs: 1000,                     // 开机画面至少播放多久（毫秒）：这段时间内点击无效，之后出现“Click to continue”
   useOriginalGif: false,              // true = 使用原版的 XP 开机 GIF，false = 用上面的 CSS 版本
   youtubeId: "7nQ2oiVqKHw",           // 原版使用的 XP 开机音效视频
   audioFile: "",                      // 如果有本地音频（如 "startup.mp3"），填这里，优先使用
