@@ -94,20 +94,20 @@ section h2{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:up
 .links a:hover{border-color:var(--fg)}
 
 /* 首页 Research */
-.paper h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;letter-spacing:-.01em}
+.paper h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.25;letter-spacing:-.005em}
 .paper h3 a{text-decoration:none}
 .paper h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-.paper .authors{margin-top:12px;font-size:15px;color:var(--muted)}
+.paper .authors{margin-top:8px;font-size:13.5px;color:var(--muted)}
 .paper .authors b{font-weight:500;color:var(--fg)}
-.paper .venue{font-size:14px;color:var(--muted)}
+.paper .venue{font-size:13px;color:var(--muted)}
 .paper .venue a{text-underline-offset:3px}
-.paper .summary{margin-top:14px;max-width:42em}
-.paper{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:start}
-.paper .thumb{display:grid;place-items:center;aspect-ratio:1;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:border-color .2s}
+.paper .summary{margin-top:10px;max-width:46em;font-size:14.5px;line-height:1.65}
+.paper{display:grid;grid-template-columns:132px 1fr;gap:28px;align-items:start}
+.paper .thumb{display:grid;place-items:center;aspect-ratio:1;padding:8px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:border-color .2s}
 .paper .thumb:hover{border-color:var(--muted)}
 .paper .thumb img{display:block;width:100%;height:auto}
-.paper .links{margin-top:18px}
-@media (max-width:640px){ .paper{grid-template-columns:1fr;gap:20px} .paper .thumb{width:160px} }
+.paper .links{margin-top:12px;font-size:14px;gap:8px 22px}
+@media (max-width:640px){ .paper{grid-template-columns:1fr;gap:16px} .paper .thumb{width:120px} }
 
 /* 子页面标题 */
 .page-head{padding:10vh 0 40px}
