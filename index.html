@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name</title>
+<meta name="description" content="Personal website of Your Name">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="dokia.css" rel="stylesheet">
+<style>
+/* =========================================================
+   颜色和字体
+   ========================================================= */
+:root{
+  --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --line:#e7e5e4; --accent:#2563eb;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Inter",-apple-system,"Helvetica Neue",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0c0a09; --fg:#f5f5f4; --muted:#a8a29e; --line:#292524; --accent:#60a5fa; }
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+/* =========================================================
+   开屏：开机画面（XP 风格，CSS 重做）
+   ========================================================= */
+#boot{
+  position:fixed;inset:0;z-index:1000;background:#000;color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;
+  font-family:"Trebuchet MS",Tahoma,sans-serif;cursor:pointer;
+  transition:opacity .8s ease;
+}
+#boot.gif{background:#000 url("https://media.giphy.com/media/LbSdXQbS0XVVC/giphy.gif") center/contain no-repeat}
+#boot.gif .logo,#boot.gif .bar,#boot.gif .foot{display:none}
+.logo{display:flex;align-items:center;gap:18px}
+.flag{display:grid;grid-template-columns:1fr 1fr;gap:4px;width:64px;height:58px;transform:skewY(-6deg) perspective(200px) rotateY(-12deg)}
+.flag i{border-radius:6px 10px 4px 8px}
+.flag i:nth-child(1){background:linear-gradient(135deg,#ff8a50,#e2380d)}
+.flag i:nth-child(2){background:linear-gradient(135deg,#a4e255,#3d9a1c)}
+.flag i:nth-child(3){background:linear-gradient(135deg,#5ab4ff,#1757d8)}
+.flag i:nth-child(4){background:linear-gradient(135deg,#ffe25a,#f0a800)}
+.wordmark{font-size:clamp(36px,7vw,58px);font-weight:700;letter-spacing:-1px;line-height:1}
+.wordmark sup{font-size:.42em;color:#ff7a1a;font-style:italic;margin-left:4px;vertical-align:.9em}
+.wordmark small{display:block;font-size:.26em;font-weight:400;letter-spacing:0;opacity:.85;margin-bottom:2px}
+.bar{width:150px;height:18px;border:2px solid #b2b2b2;border-radius:4px;padding:2px;overflow:hidden;position:relative}
+.bar span{position:absolute;top:2px;bottom:2px;width:30px;left:-34px;animation:slide 1.6s linear infinite;
+  background:repeating-linear-gradient(90deg,transparent 0 2px,#3a72e8 2px 10px)}
+.bar span::after{content:"";position:absolute;inset:0;background:linear-gradient(#ffffff99,transparent 50%,#0003);
+  -webkit-mask:repeating-linear-gradient(90deg,transparent 0 2px,#000 2px 10px);mask:repeating-linear-gradient(90deg,transparent 0 2px,#000 2px 10px)}
+@keyframes slide{to{left:150px}}
+/* 加载完成后出现的“点击开始”提示 */
+.start{position:absolute;bottom:22%;font-size:14px;letter-spacing:.08em;opacity:0;transition:opacity .6s ease}
+#boot.loaded .start{opacity:.85;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.foot{position:absolute;bottom:28px;left:32px;right:32px;display:flex;justify-content:space-between;font-size:12px;opacity:.75}
+.hide{opacity:0;pointer-events:none}
+
+/* 翻盖手机：放在开机画面右下角，只在开屏时出现，点它开合（不会进入网站） */
+#boot #dokia{position:absolute;bottom:64px;right:48px;cursor:pointer}
+#dokia.open #topscreen,#dokia.open #keyboard{visibility:visible}
+#dokia.open #front{visibility:hidden}
+@media (max-width:600px){
+  #boot #dokia{right:6px;bottom:52px;transform:scale(.65);transform-origin:bottom right}
+}
+
+/* 声音用的 YouTube 播放器：不可见 */
+#sound{position:fixed;width:1px;height:1px;left:-10px;top:-10px;opacity:0;pointer-events:none;border:0}
+
+/* =========================================================
+   主页（简约风）
+   ========================================================= */
+.wrap{max-width:680px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-size:14px}
+header.top nav{display:flex;gap:22px}
+header.top nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+header.top nav a:hover{color:var(--fg)}
+.brand{font-weight:600;text-decoration:none}
+
+.hero{padding:12vh 0 12vh}
+.photo{position:relative;width:112px;height:112px;border-radius:50%;overflow:hidden;margin-bottom:36px;
+  background:var(--line);display:grid;place-items:center;box-shadow:0 0 0 1px var(--line)}
+.photo span{font-family:var(--serif);font-size:40px;color:var(--muted)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,9vw,76px);line-height:1.05;letter-spacing:-.02em}
+.hero h1 em{color:var(--muted)}
+.hero p{margin-top:28px;font-size:17px;color:var(--muted);max-width:32em}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+.about p+p{margin-top:16px}
+.links{display:flex;flex-wrap:wrap;gap:12px 28px}
+.links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
+.links a:hover{border-color:var(--fg)}
+footer{padding:48px 0 64px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between}
+#replay{all:unset;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* 进场动画 */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .8s ease,transform .8s ease}
+body.ready .reveal{opacity:1;transform:none}
+body.ready .reveal:nth-child(2){transition-delay:.1s}
+body.ready .reveal:nth-child(3){transition-delay:.2s}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 开屏：开机画面 ============ -->
+<div id="boot" role="button" tabindex="0" aria-label="Enter site">
+  <div class="logo">
+    <div class="flag"><i></i><i></i><i></i><i></i></div>
+    <div class="wordmark"><small>welcome to</small>Your Name<sup>xp</sup></div>
+  </div>
+  <div class="bar"><span></span></div>
+  <div class="start">click anywhere to start 🔊</div>
+  <div class="foot"><span>© 2026 Your Name</span><span>personal edition</span></div>
+
+  <!-- 翻盖手机 DOKIA — (c) Layout created by daniel (https://layouts.spacehey.com/layout?id=82799) -->
+  <div id="dokia" title="Flip me"><div class="openopen" id="topscreen"><a class="openphone" href="#front" aria-label="Close phone"></a><div class="screenframe"><p><img src="" alt=""/></p></div></div><div id="keyboard"><div class="divisorsor"></div><a class="openphone" href="#front" aria-label="Close phone"></a><div class="decoratione"><p>◜ ◝</p><p>◟ ◞</p></div><div class="rowrowro" id="thefirsty"><p>1</p><p>2</p><p>3</p></div><div class="rowrowro"><p>4</p><p>5</p><p>6</p></div><div class="rowrowro"><p>7</p><p>8</p><p>9</p></div><div class="rowrowro"><p>*</p><p>0</p><p>#</p></div><div class="sillyring"><div><span></span></div></div></div><div class="openopen" id="front"><a class="openphone" href="#topscreen" aria-label="Open phone"></a><div class="labelidk"></div></div><div id="antenna"></div></div>
+</div>
+
+<!-- ============ 主页 ============ -->
+<div class="wrap">
+  <header class="top reveal">
+    <a class="brand" href="#">Your Name</a>
+    <nav><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <div class="hero reveal">
+      <!-- 你的照片：把照片命名为 photo.jpg 放在 index.html 旁边即可；没有照片时显示首字母 -->
+      <div class="photo"><img src="photo.jpg" alt="Photo of Your Name" onerror="this.remove()"><span>YN</span></div>
+      <h1>Hi, I'm Your Name.<br><em>One line about what you do.</em></h1>
+      <p>A short introduction in two or three sentences: where you are, what you're working on, and what you care about. Keep it brief and memorable.</p>
+    </div>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>A longer introduction: education, experience, and the areas you research or work in.</p>
+      <p>Something more personal, too: hobbies, or what you've been reading lately.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://github.com/">GitHub</a>
+        <a href="#">Résumé (PDF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Your Name</span><button id="replay" type="button">Replay intro</button></footer>
+</div>
+
+<script>
+/* ============ 配置 ============ */
+const CONFIG = {
+  bootMs: 3000,                       // 进度条走多久后出现“click anywhere to start”
+  useOriginalGif: false,              // true = 使用原版的 XP 开机 GIF，false = 用上面的 CSS 版本
+  youtubeId: "7nQ2oiVqKHw",           // 原版使用的 XP 开机音效视频
+  audioFile: "",                      // 如果有本地音频（如 "startup.mp3"），填这里，优先使用
+  oncePerVisit: true                  // true = 同一次访问只放一次开屏，刷新页面不重复
+};
+
+const boot = document.getElementById("boot");
+if (CONFIG.useOriginalGif) boot.classList.add("gif");
+
+function playSound(){
+  if (CONFIG.audioFile){
+    new Audio(CONFIG.audioFile).play().catch(()=>{});
+    return;
+  }
+  // 浏览器禁止网页在用户点击之前自动播放声音，所以在点击之后才创建播放器
+  document.getElementById("sound")?.remove();
+  const f = document.createElement("iframe");
+  f.id = "sound";
+  f.allow = "autoplay";
+  f.title = "startup sound";
+  f.src = `https://www.youtube.com/embed/${CONFIG.youtubeId}?autoplay=1&controls=0&playsinline=1`;
+  document.body.appendChild(f);
+}
+
+function showSite(){ document.body.classList.add("ready"); }
+
+function enter(withSound){
+  if (boot.classList.contains("hide")) return;
+  clearTimeout(startIntro.t);
+  if (withSound) playSound();
+  boot.classList.add("hide");
+  setTimeout(showSite, 300);
+  try { sessionStorage.setItem("booted","1"); } catch(e){}
+}
+
+function startIntro(){
+  boot.classList.remove("hide","loaded");
+  document.body.classList.remove("ready");
+  boot.focus();
+  clearTimeout(startIntro.t);
+  startIntro.t = setTimeout(()=>boot.classList.add("loaded"), CONFIG.bootMs);
+}
+
+boot.addEventListener("click", ()=>enter(true));
+
+// 翻盖手机：点击开合，不改网址、不触发进入网站
+const dokia = document.getElementById("dokia");
+// 屏幕图片来自 dokia.css 里的 --image（有的浏览器不支持原版的写法，这里补上）
+const imgUrl = getComputedStyle(document.documentElement).getPropertyValue("--image").trim()
+  .match(/^url\(["']?(.*?)["']?\)$/);
+if (imgUrl && imgUrl[1]) dokia.querySelector(".screenframe img").src = imgUrl[1];
+dokia.addEventListener("click", e=>{
+  e.stopPropagation();
+  const link = e.target.closest(".openphone");
+  if (link) e.preventDefault();
+  dokia.classList.toggle("open");
+});
+
+document.addEventListener("keydown", e=>{
+  if (boot.classList.contains("hide")) return;
+  if (dokia.contains(document.activeElement)) return;
+  if (e.key === "Escape") enter(false);                  // Esc：跳过，不放声音
+  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); enter(true); }
+});
+document.getElementById("replay").addEventListener("click", ()=>{ window.scrollTo(0,0); startIntro(); });
+
+let seen = false;
+try { seen = CONFIG.oncePerVisit && sessionStorage.getItem("booted") === "1"; } catch(e){}
+if (seen){ boot.classList.add("hide"); showSite(); }
+else startIntro();
+</script>
+</body>
+</html>
