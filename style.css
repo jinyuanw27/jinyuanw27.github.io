@@ -120,6 +120,7 @@ section h2{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:up
 .frow{display:flex;justify-content:space-between;gap:24px;padding:12px 0;border-bottom:1px solid var(--line)}
 .frow:last-child{border-bottom:0}
 .frow span{text-decoration:line-through;text-decoration-color:var(--muted);text-decoration-thickness:1px}
+.frow small{display:block;margin-top:2px;font-size:14px;color:var(--muted)}
 .frow time{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;flex:none}
 
 /* Misc：照片墙 */
