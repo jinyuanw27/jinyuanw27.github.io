@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Misc · Jinyuan Wang</title>
-<meta name="description" content="Miscellaneous things, mostly cats">
+<meta name="description" content="Cats and solo trips of Jinyuan Wang">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,19 +20,32 @@
   <main>
     <div class="page-head">
       <h1>Misc</h1>
-      <p>Odds and ends. Mostly cats.</p>
+      <p>Odds and ends: my cats, and the places I've traveled to on my own.</p>
     </div>
 
-    <!-- 小猫照片：把照片放进 misc 文件夹，文件名和下面的 src 对上即可。
-         想加更多就复制一整个 <figure>…</figure>；不想要文字说明就删掉 figcaption。
-         照片还没放进去时会显示一个小猫占位。 -->
-    <div class="gallery">
-      <figure><div class="pic"><img src="misc/cat-1.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
-      <figure><div class="pic"><img src="misc/cat-2.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
-      <figure><div class="pic"><img src="misc/cat-3.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
-      <figure><div class="pic"><img src="misc/cat-4.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
-      <figure><div class="pic"><img src="misc/cat-5.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
-      <figure><div class="pic"><img src="misc/cat-6.jpg" alt="Cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+    <!-- 照片怎么放：
+         · 小猫照片放进 misc/cats 文件夹，命名为 cat-1.jpg、cat-2.jpg……
+         · 旅行照片放进 misc/trips 文件夹，命名为 trip-1.jpg、trip-2.jpg……
+         想加更多就复制一整个 <figure>…</figure>；照片还没放进去时会显示占位图标。 -->
+    <div class="mgroup">
+      <h2>Cats</h2>
+      <div class="gallery">
+      <figure><div class="pic" data-empty="🐱"><img src="misc/cats/cat-1.jpg" alt="My cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic" data-empty="🐱"><img src="misc/cats/cat-2.jpg" alt="My cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic" data-empty="🐱"><img src="misc/cats/cat-3.jpg" alt="My cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic" data-empty="🐱"><img src="misc/cats/cat-4.jpg" alt="My cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic" data-empty="🐱"><img src="misc/cats/cat-5.jpg" alt="My cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="pic" data-empty="🐱"><img src="misc/cats/cat-6.jpg" alt="My cat" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption>Caption</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="mgroup">
+      <h2>Solo Trips</h2>
+      <div class="gallery">
+      <figure><div class="pic" data-empty="🧳"><img src="misc/trips/trip-1.jpg" alt="Solo trip photo" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption><b>City, Country</b><span>2025</span></figcaption></figure>
+      <figure><div class="pic" data-empty="🧳"><img src="misc/trips/trip-2.jpg" alt="Solo trip photo" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption><b>City, Country</b><span>2025</span></figcaption></figure>
+      <figure><div class="pic" data-empty="🧳"><img src="misc/trips/trip-3.jpg" alt="Solo trip photo" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"></div><figcaption><b>City, Country</b><span>2025</span></figcaption></figure>
+      </div>
     </div>
   </main>
 
