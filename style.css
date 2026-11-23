@@ -72,7 +72,7 @@ header.top nav a:hover,header.top nav a[aria-current="page"]{color:var(--fg)}
 .photo-fig figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
 .photo-fig time{flex:none;font-variant-numeric:tabular-nums}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.15;letter-spacing:-.01em}
-.hero h1 em{color:var(--muted)}
+.hero h1 em{color:var(--muted);font-size:26px;line-height:1.3;display:inline-block;margin-top:6px}
 .hero p{font-size:16px;color:var(--muted);max-width:34em}
 .hero p a{color:var(--fg);text-decoration-color:var(--line);text-underline-offset:3px;transition:text-decoration-color .2s}
 .hero p a:hover{text-decoration-color:var(--fg)}
